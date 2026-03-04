@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0c0e" />
+  <title>CLARITY INTELLIGENCE — PBCA</title>
+
+  <!-- Fonts (Serif for headings + Sans for body) -->
+  <!-- Serif option A: Cormorant Garamond (default) -->
+  <!-- Serif option B: EB Garamond (swap family in styles.css: --font-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true"></div>
+        <div class="brand__text">
+          <div class="brand__title">CLARITY INTELLIGENCE</div>
+          <div class="brand__sub">Private Behavioural Contract Audit (PBCA)</div>
+        </div>
+      </div>
+
+      <div class="topbar__right">
+        <button id="btnBack" class="btn btn--ghost" type="button" aria-label="Back" disabled>Back</button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite">
+      <!-- SCREEN: LANDING -->
+      <section class="screen is-active" data-screen="landing">
+        <div class="panel">
+          <div class="panel__header">
+            <h1 class="h1">CLARITY INTELLIGENCE</h1>
+            <div class="h2">Welcome to Your Private Behavioural Contract Audit (PBCA)</div>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="copy">
+            <p>Private contracts are internal agreements formed through repeated behaviour.<br>
+            Unaudited, they continue to run.</p>
+
+            <p>—<br>
+            Blind spots generate cost.<br>
+            They are structural.<br>
+            They form where behaviour goes unreviewed.</p>
+
+            <p>—<br>
+            Unaudited behavioural contracts compound.<br>
+            The earliest are often the most expensive.<br>
+            They extract until renegotiated.</p>
+
+            <p>—<br>
+            Structure:<br>
+            Single completion.<br>
+            5 screens.<br>
+            Confidential report generated immediately.<br>
+            No reruns.</p>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="access">Request Access</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Private. Automated. No human review.</div>
+          <a class="foot__reset" href="#" id="resetLink" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: ACCESS -->
+      <section class="screen" data-screen="access">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">ACCESS</div>
+            <h2 class="h1">Blind Spot Scan</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="form">
+            <div class="field">
+              <label class="label" for="calibration">Calibration:<br>
+                “Before we isolate the active contract: name one outcome that looks like a problem to others but isn’t to you.”</label>
+              <textarea id="calibration" class="input" rows="3" placeholder="[ Input ]"></textarea>
+            </div>
+
+            <div class="field">
+              <label class="label" for="problem">“What problem are you currently facing that has not resolved? Be specific.”</label>
+              <textarea id="problem" class="input" rows="3" placeholder="[ Input ]"></textarea>
+            </div>
+
+            <div class="field">
+              <label class="label" for="duration">Duration</label>
+              <select id="duration" class="input">
+                <option value="">Select</option>
+                <option value="< 1 year">&lt; 1 year</option>
+                <option value="1–3 years">1–3 years</option>
+                <option value="3–5 years">3–5 years</option>
+                <option value="5+ years">5+ years</option>
+              </select>
+            </div>
+
+            <div class="grid2">
+              <div class="field">
+                <label class="label" for="costToDate">Direct financial cost to date ($ numeric)</label>
+                <input id="costToDate" class="input" inputmode="numeric" placeholder="$" />
+              </div>
+
+              <div class="field">
+                <label class="label" for="projectedCost">Projected cost in 3 years ($ numeric)</label>
+                <input id="projectedCost" class="input" inputmode="numeric" placeholder="$" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Human &amp; strategic cost (checkbox list + short text area)</label>
+
+              <div class="chips">
+                <label class="chip"><input type="checkbox" value="Health" class="hc"> <span>Health</span></label>
+                <label class="chip"><input type="checkbox" value="Energy" class="hc"> <span>Energy</span></label>
+                <label class="chip"><input type="checkbox" value="Reputation" class="hc"> <span>Reputation</span></label>
+                <label class="chip"><input type="checkbox" value="Trust" class="hc"> <span>Trust</span></label>
+                <label class="chip"><input type="checkbox" value="Authority" class="hc"> <span>Authority</span></label>
+                <label class="chip"><input type="checkbox" value="Momentum" class="hc"> <span>Momentum</span></label>
+                <label class="chip"><input type="checkbox" value="Opportunity cost" class="hc"> <span>Opportunity cost</span></label>
+                <label class="chip"><input type="checkbox" value="Decision quality" class="hc"> <span>Decision quality</span></label>
+              </div>
+
+              <textarea id="humanCostText" class="input" rows="3" placeholder="[ Short Input ]"></textarea>
+            </div>
+
+            <div class="field">
+              <label class="label">Previous attempts? (Yes/No + short text if yes)</label>
+              <div class="seg">
+                <label class="seg__item"><input type="radio" name="attempted" value="Yes"> <span>Yes</span></label>
+                <label class="seg__item"><input type="radio" name="attempted" value="No"> <span>No</span></label>
+              </div>
+              <textarea id="attemptsText" class="input" rows="2" placeholder="If Yes: What changed?"></textarea>
+            </div>
+
+            <div class="rule rule--thin"></div>
+
+            <div class="priceRow">
+              <div class="priceRow__label">Investment</div>
+              <div class="priceRow__value">$2,575</div>
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="payment">Proceed</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Single completion. Confidential report. No reruns.</div>
+          <a class="foot__reset" href="#" id="resetLink2" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: PAYMENT CONFIRMATION -->
+      <section class="screen" data-screen="payment">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">PAYMENT CONFIRMATION</div>
+            <h2 class="h1">Access confirmed.</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="copy">
+            <p>This audit can be completed once.</p>
+            <p>Single completion. No reruns.</p>
+            <p>Responses processed automatically. No human review.</p>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="audit1">Start Audit</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Take your time. Submit only when finished.</div>
+          <a class="foot__reset" href="#" id="resetLink3" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: AUDIT 1 -->
+      <section class="screen" data-screen="audit1">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">THE AUDIT</div>
+            <h2 class="h1">SCREEN 1 — ACTIVE BLIND SPOT</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="form">
+            <div class="field">
+              <label class="label" for="a1Outcome">What outcome keeps compounding against you — despite your competence?</label>
+              <textarea id="a1Outcome" class="input" rows="3" placeholder="[ Input ]"></textarea>
+            </div>
+
+            <div class="rule rule--thin"></div>
+
+            <div class="field">
+              <div class="label">In each instance, what behaviour repeats?</div>
+              <div class="hint">Not the situation. Not other people. Your behaviour. One clear pattern.</div>
+              <textarea id="a1Behaviour" class="input" rows="3" placeholder="[ Input ]"></textarea>
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="audit2">Next</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Single completion. No reruns.</div>
+          <a class="foot__reset" href="#" id="resetLink4" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: AUDIT 2 -->
+      <section class="screen" data-screen="audit2">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">THE AUDIT</div>
+            <h2 class="h1">SCREEN 2 — THE INCENTIVE</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="form">
+            <div class="field">
+              <label class="label" for="a2Incentive">What does this behaviour give you?</label>
+              <textarea id="a2Incentive" class="input" rows="3" placeholder="[ Input ]"></textarea>
+            </div>
+
+            <div class="rule rule--thin"></div>
+
+            <div class="field">
+              <label class="label" for="a2Loss">If this behaviour disappeared, what would you lose?</label>
+              <textarea id="a2Loss" class="input" rows="3" placeholder="[ Input ]"></textarea>
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="audit3">Next</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Private audit console.</div>
+          <a class="foot__reset" href="#" id="resetLink5" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: AUDIT 3 -->
+      <section class="screen" data-screen="audit3">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">THE AUDIT</div>
+            <h2 class="h1">SCREEN 3 — COST EXPOSURE</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="form">
+            <div class="field">
+              <div class="label">How costly is the recurring outcome? <span class="muted">1 (minor) — 10 (severe)</span></div>
+              <div class="sliderRow">
+                <input id="a3Cost" type="range" min="1" max="10" step="1" value="7" />
+                <div class="pill"><span id="a3CostVal">7</span>/10</div>
+              </div>
+            </div>
+
+            <div class="rule rule--thin"></div>
+
+            <div class="field">
+              <div class="label">How valuable is the incentive you are protecting? <span class="muted">1 (low) — 10 (high)</span></div>
+              <div class="sliderRow">
+                <input id="a3Inc" type="range" min="1" max="10" step="1" value="7" />
+                <div class="pill"><span id="a3IncVal">7</span>/10</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="audit4">Next</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Values update live.</div>
+          <a class="foot__reset" href="#" id="resetLink6" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: AUDIT 4 -->
+      <section class="screen" data-screen="audit4">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">THE AUDIT</div>
+            <h2 class="h1">SCREEN 4 — CONTRACT REWRITE</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="copy">
+            <p>Design three alternative behaviours that could deliver the same incentive with lower cost.</p>
+          </div>
+
+          <div class="form">
+            <div class="optionCard">
+              <div class="optionHead">
+                <div class="optionTitle">Option 1</div>
+                <label class="radioPick">
+                  <input type="radio" name="picked" value="1">
+                  <span>Select</span>
+                </label>
+              </div>
+              <textarea id="opt1Text" class="input" rows="2" placeholder="[ Input ]"></textarea>
+
+              <div class="grid2">
+                <div class="field">
+                  <div class="label">Incentive 1–10</div>
+                  <div class="sliderRow">
+                    <input id="opt1Inc" type="range" min="1" max="10" step="1" value="7" />
+                    <div class="pill"><span id="opt1IncVal">7</span>/10</div>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="label">Cost 1–10</div>
+                  <div class="sliderRow">
+                    <input id="opt1Cost" type="range" min="1" max="10" step="1" value="7" />
+                    <div class="pill"><span id="opt1CostVal">7</span>/10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="optionCard">
+              <div class="optionHead">
+                <div class="optionTitle">Option 2</div>
+                <label class="radioPick">
+                  <input type="radio" name="picked" value="2">
+                  <span>Select</span>
+                </label>
+              </div>
+              <textarea id="opt2Text" class="input" rows="2" placeholder="[ Input ]"></textarea>
+
+              <div class="grid2">
+                <div class="field">
+                  <div class="label">Incentive 1–10</div>
+                  <div class="sliderRow">
+                    <input id="opt2Inc" type="range" min="1" max="10" step="1" value="7" />
+                    <div class="pill"><span id="opt2IncVal">7</span>/10</div>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="label">Cost 1–10</div>
+                  <div class="sliderRow">
+                    <input id="opt2Cost" type="range" min="1" max="10" step="1" value="7" />
+                    <div class="pill"><span id="opt2CostVal">7</span>/10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="optionCard">
+              <div class="optionHead">
+                <div class="optionTitle">Option 3</div>
+                <label class="radioPick">
+                  <input type="radio" name="picked" value="3">
+                  <span>Select</span>
+                </label>
+              </div>
+              <textarea id="opt3Text" class="input" rows="2" placeholder="[ Input ]"></textarea>
+
+              <div class="grid2">
+                <div class="field">
+                  <div class="label">Incentive 1–10</div>
+                  <div class="sliderRow">
+                    <input id="opt3Inc" type="range" min="1" max="10" step="1" value="7" />
+                    <div class="pill"><span id="opt3IncVal">7</span>/10</div>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="label">Cost 1–10</div>
+                  <div class="sliderRow">
+                    <input id="opt3Cost" type="range" min="1" max="10" step="1" value="7" />
+                    <div class="pill"><span id="opt3CostVal">7</span>/10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule rule--thin"></div>
+
+            <div class="copy">
+              <p>Select the option with the highest leverage.</p>
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" data-next="review">Next</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">One selection required.</div>
+          <a class="foot__reset" href="#" id="resetLink7" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: REVIEW -->
+      <section class="screen" data-screen="review">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">THE AUDIT</div>
+            <h2 class="h1">SCREEN 5 — REVIEW</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="copy">
+            <p>Reviewing behavioural contract.</p>
+          </div>
+
+          <div class="reviewGrid">
+            <div class="reviewBlock">
+              <div class="reviewLabel">Compounding Outcome</div>
+              <div class="reviewText" id="rvOutcome">—</div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Sustaining Behaviour</div>
+              <div class="reviewText" id="rvBehaviour">—</div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Protected Incentive</div>
+              <div class="reviewText" id="rvIncentive">—</div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Declared Exposure (3-year projection)</div>
+              <div class="reviewText mono" id="rvExposure">$ —</div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Cost Rating</div>
+              <div class="bar10" id="rvCostBar" aria-label="Cost Rating"></div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Incentive Rating</div>
+              <div class="bar10" id="rvIncBar" aria-label="Incentive Rating"></div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Selected Rewrite</div>
+              <div class="reviewText" id="rvPicked">Option —</div>
+              <div class="reviewText" id="rvPickedText">—</div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Projected Incentive</div>
+              <div class="bar10" id="rvProjIncBar" aria-label="Projected Incentive"></div>
+            </div>
+
+            <div class="reviewBlock">
+              <div class="reviewLabel">Projected Cost</div>
+              <div class="bar10" id="rvProjCostBar" aria-label="Projected Cost"></div>
+            </div>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="copy">
+            <p>Unaudited behavioural contracts compound.<br>The earliest ones are often the most expensive.</p>
+            <p class="statusLine">CONTRACT STATUS: reviewed.</p>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" id="btnDownload">Download Confidential Report</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Confidential report generated immediately.</div>
+          <a class="foot__reset" href="#" id="resetLink8" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: REPORT VIEW -->
+      <section class="screen" data-screen="report">
+        <div class="panel reportPanel">
+          <div class="panel__header">
+            <div class="kicker">CONFIDENTIAL</div>
+            <h2 class="h1">PRIVATE BEHAVIOURAL CONTRACT AUDIT (PBCA) REVIEW</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <article class="reportPaper" id="reportPaper">
+            <!-- injected by JS -->
+          </article>
+
+          <div class="panel__footer panel__footer--split">
+            <button class="btn btn--ghost" type="button" id="btnPrint">Print</button>
+            <button class="btn btn--primary" type="button" data-next="post">Continue</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Private. Automated. No human review.</div>
+          <a class="foot__reset" href="#" id="resetLink9" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+
+      <!-- SCREEN: POST-DOWNLOAD -->
+      <section class="screen" data-screen="post">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="kicker">POST-DOWNLOAD</div>
+            <h2 class="h1">Optional.</h2>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="copy">
+            <p>If you would like to be considered for future Clarity Intelligence releases,<br>you may request inclusion.</p>
+          </div>
+
+          <div class="form">
+            <label class="chip chip--row">
+              <input type="checkbox" id="considered">
+              <span>I would like to be considered.</span>
+            </label>
+
+            <div class="field">
+              <label class="label" for="email">Email:</label>
+              <input id="email" class="input" inputmode="email" placeholder="[ Input ]" />
+            </div>
+          </div>
+
+          <div class="panel__footer">
+            <button class="btn btn--primary" type="button" id="btnFinish">Close</button>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__meta">Private. Automated. No human review.</div>
+          <a class="foot__reset" href="#" id="resetLink10" aria-label="Reset session">Reset session</a>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
