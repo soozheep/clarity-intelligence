@@ -207,7 +207,20 @@ body{
   opacity:0;
   transform: translateX(14px);
 }
+/* MOBILE: allow long screens to scroll */
+@media (max-width: 720px){
+  .stage{
+    /* keep your width rules, but allow height to grow with content */
+    flex: 1;
+    min-height: 0; /* important so overflow works in flex layouts */
+  }
 
+  .screen{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(18px + env(safe-area-inset-bottom));
+  }
+}
 .panel{
   background: var(--panel);
   border: 1px solid var(--line2);
