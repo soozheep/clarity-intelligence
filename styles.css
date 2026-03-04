@@ -220,7 +220,6 @@ body{
     -webkit-overflow-scrolling: touch;
     padding-bottom: calc(18px + env(safe-area-inset-bottom));
   }
-}
 .panel{
   background: var(--panel);
   border: 1px solid var(--line2);
