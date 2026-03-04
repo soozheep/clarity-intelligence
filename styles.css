@@ -522,3 +522,64 @@ input[type="range"]{
   .screen{ position: static; opacity:1 !important; transform:none !important; }
   .reportPaper{ border:none; border-radius:0; padding:0; }
 }
+/* =========================
+   Desktop “Phone” Frame
+   ========================= */
+
+.device{
+  width: 100%;
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 22px 14px;
+}
+
+.device__screen{
+  width: 390px;
+  height: 844px;
+  max-height: calc(100vh - 44px);
+  border-radius: 34px;
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(225,225,225,0.14);
+  box-shadow:
+    0 28px 90px rgba(0,0,0,0.70),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* Make the app fill the phone */
+.device__screen .shell{
+  min-height: 100%;
+  padding: 14px 12px 18px;
+}
+
+/* Home indicator */
+.home-indicator{
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  width: 130px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  pointer-events:none;
+}
+
+/* On real mobile widths: remove phone frame, run edge-to-edge */
+@media (max-width: 480px){
+  .device{ padding: 0; }
+  .device__screen{
+    width: 100%;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  .home-indicator{ display:none; }
+}
