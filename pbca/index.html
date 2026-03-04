@@ -19,20 +19,24 @@
 <body>
   <div class="bg" aria-hidden="true"></div>
 
-  <div class="shell">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand__mark" aria-hidden="true"></div>
-        <div class="brand__text">
-          <div class="brand__title">CLARITY INTELLIGENCE</div>
-          <div class="brand__sub">Private Behavioural Contract Audit (PBCA)</div>
-        </div>
-      </div>
+  <!-- NEW: desktop device frame wrapper -->
+  <div class="device">
+    <div class="device__screen">
+      <!-- KEEP your existing .shell EXACTLY as-is -->
+      <div class="shell">
+        <header class="topbar">
+          <div class="brand">
+            <div class="brand__mark" aria-hidden="true"></div>
+            <div class="brand__text">
+              <div class="brand__title">CLARITY INTELLIGENCE</div>
+              <div class="brand__sub">Private Behavioural Contract Audit (PBCA)</div>
+            </div>
+          </div>
 
-      <div class="topbar__right">
-        <button id="btnBack" class="btn btn--ghost" type="button" aria-label="Back" disabled>Back</button>
-      </div>
-    </header>
+          <div class="topbar__right">
+            <button id="btnBack" class="btn btn--ghost" type="button" aria-label="Back" disabled>Back</button>
+          </div>
+        </header>
 
     <main class="stage" id="stage" aria-live="polite">
       <!-- SCREEN: LANDING -->
@@ -567,6 +571,11 @@
         </footer>
       </section>
     </main>
+  </div>
+
+  <!-- NEW: subtle “home indicator” -->
+      <div class="home-indicator" aria-hidden="true"></div>
+    </div>
   </div>
 
   <script src="../script.js"></script>
